@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: jeilesproa 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jeilesproa
+  template:
+    metadata:
+      labels:
+        app: jeilesproa 
+    spec:
+      containers:
+        - name: jeilesproa 
+          image: jmeilescontainerregistry.azurecr.io/jeilesproa
+          ports:
+          - containerPort: 8080
